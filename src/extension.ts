@@ -59,7 +59,7 @@ async function startScreensaver(context: vscode.ExtensionContext) {
     screensaverPanel = vscode.window.createWebviewPanel(
         'cosmicScreensaver',
         'Cosmic Screensaver',
-        vscode.ViewColumn.Active,
+        vscode.ViewColumn.One,
         {
             enableScripts: true,
             retainContextWhenHidden: true,
@@ -69,8 +69,16 @@ async function startScreensaver(context: vscode.ExtensionContext) {
 
     screensaverPanel.webview.html = getCosmicHtml();
 
-    await vscode.commands.executeCommand('workbench.action.moveEditorToNewWindow');
-    await vscode.commands.executeCommand('workbench.action.toggleFullScreen');
+    await new Promise(resolve => setTimeout(resolve, 80));
+
+    try {
+        await vscode.commands.executeCommand('workbench.action.moveEditorToNewWindow');
+
+        await new Promise(resolve => setTimeout(resolve, 250));
+        await vscode.commands.executeCommand('workbench.action.toggleFullScreen');
+    } catch (err) {
+        console.error("AstroIdle layout adjustment failed safely:", err);
+    }
 
     screensaverPanel.onDidDispose(() => {
         cleanUpAndExit(context);
@@ -87,7 +95,11 @@ async function cleanUpAndExit(context: vscode.ExtensionContext) {
     clearTimeout(idleTimer);
 
     if (screensaverPanel) {
-        await vscode.commands.executeCommand('workbench.action.toggleFullScreen');
+        try {
+            await vscode.commands.executeCommand('workbench.action.toggleFullScreen');
+            await new Promise(resolve => setTimeout(resolve, 150));
+        } catch (e) {}
+
         screensaverPanel.dispose();
         screensaverPanel = undefined;
     }
