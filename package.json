@@ -3,7 +3,7 @@
   "displayName": "AstroIdle",
   "description": "Transform your editor into a tranquil cosmic starscape whenever your code goes idle.",
   "icon": "icon.png",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "gayatrigundapaneni",
   "repository": {
     "type": "git",
