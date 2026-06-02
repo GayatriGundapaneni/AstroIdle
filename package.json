@@ -1,0 +1,53 @@
+{
+  "name": "astroidle",
+  "displayName": "AstroIdle",
+  "description": "Transform your editor into a tranquil cosmic starscape whenever your code goes idle.",
+  "version": "0.0.1",
+  "publisher": "GayatriGundapaneni",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GayatriGundapaneni/AstroIdle.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "files": [
+    "out",
+    "assets"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "AstroIdle Configuration",
+      "properties": {
+        "astroIdle.inactivityTimeout": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "description": "The number of minutes of inactivity required before the AstroIdle starscape activates."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ --noEmitOnError false",
+    "watch": "tsc -watch -p ./",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "sound-play": "^1.1.0"
+  }
+}
