@@ -42,7 +42,7 @@ No external dependencies or bulky background apps required.
 - Drift away.
 
 ### 📜 Release Notes
-0.0.1
+0.0.4
 Initial launch! 🚀
 
 - Dynamic star counts tailored exactly to 1080p up to 4K resolutions.
