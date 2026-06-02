@@ -2,7 +2,7 @@
   "name": "astroidle",
   "displayName": "AstroIdle",
   "description": "Transform your editor into a tranquil cosmic starscape whenever your code goes idle.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "GayatriGundapaneni",
   "repository": {
     "type": "git",
