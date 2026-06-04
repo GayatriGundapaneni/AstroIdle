@@ -42,9 +42,12 @@ No external dependencies or bulky background apps required.
 - Drift away.
 
 ### 📜 Release Notes
-0.0.4
+v0.0.4
 Initial launch! 🚀
 
 - Dynamic star counts tailored exactly to 1080p up to 4K resolutions.
 - Responsive interaction listeners for mouse tracking, keystrokes, and window re-focusing.
 - Customized native settings menu support for user-defined inactivity timeouts.
+
+v0.0.5
+- Revised Preview and Icon image
